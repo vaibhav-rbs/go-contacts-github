@@ -1,0 +1,44 @@
+{
+	"ImportPath": "go-contacts",
+	"GoVersion": "go1.12",
+	"GodepVersion": "v80",
+	"Deps": [
+		{
+			"ImportPath": "github.com/dgrijalva/jwt-go",
+			"Comment": "v3.2.0-4-g3af4c74",
+			"Rev": "3af4c746e1c248ee8491a3e0c6f7a9cd831e95f8"
+		},
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Comment": "v1.7.1",
+			"Rev": "c5c6c98bc25355028a63748a498942a6398ccd22"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/gorm",
+			"Comment": "v1.9.2-23-gefcabc8",
+			"Rev": "efcabc8be3ab9cfb79b8318bd940586ab6bfa528"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/gorm/dialects/sqlite",
+			"Comment": "v1.9.2-23-gefcabc8",
+			"Rev": "efcabc8be3ab9cfb79b8318bd940586ab6bfa528"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/inflection",
+			"Rev": "04140366298a54a039076d798123ffa108fff46c"
+		},
+		{
+			"ImportPath": "github.com/mattn/go-sqlite3",
+			"Comment": "v1.10.0-41-g31f5bb8",
+			"Rev": "31f5bb843b7852e28d5a66d1d539c042c3bb623a"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/bcrypt",
+			"Rev": "88737f569e3a9c7ab309cdc09a07fe7fc87233c3"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/blowfish",
+			"Rev": "88737f569e3a9c7ab309cdc09a07fe7fc87233c3"
+		}
+	]
+}
