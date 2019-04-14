@@ -1,6 +1,7 @@
 package models
 
 import (
+	"fmt"
 	u "go-contacts/utils"
 	"os"
 	"strings"
@@ -109,14 +110,15 @@ func Login(email, password string) map[string]interface{} {
 	return resp
 }
 
-func GetUser(u uint) *Account {
+func GetAllUsers() *Account {
 
 	acc := &Account{}
-	GetDB().Table("accounts").Where("id = ?", u).First(acc)
-	if acc.Email == "" { //User not found!
-		return nil
+	rows, err := GetDB().Raw("select * from accounts").Rows()
+	if err != nil {
+		fmt.Print("error")
 	}
-
-	acc.Password = ""
+	for rows.Next() {
+		GetDB().ScanRows(rows, &acc)
+	}
 	return acc
 }
