@@ -110,15 +110,35 @@ func Login(email, password string) map[string]interface{} {
 	return resp
 }
 
-func GetAllUsers() *Account {
+func GetAllUsers() []*Account {
 
-	acc := &Account{}
+	accs := []*Account{}
 	rows, err := GetDB().Raw("select * from accounts").Rows()
+
 	if err != nil {
-		fmt.Print("error")
+		fmt.Printf("error: %v", err)
 	}
 	for rows.Next() {
+		acc := &Account{}
 		GetDB().ScanRows(rows, &acc)
+		accs = append(accs, acc)
 	}
-	return acc
+	return accs
+}
+
+func GetUser(id uint) []*Account {
+
+	accs := []*Account{}
+	rows, err := GetDB().Raw("select * from accounts where ID=?", id).Rows()
+
+	if err != nil {
+		fmt.Printf("error: %v", err)
+	}
+	for rows.Next() {
+
+		acc := &Account{}
+		GetDB().ScanRows(rows, &acc)
+		accs = append(accs, acc)
+	}
+	return accs
 }
