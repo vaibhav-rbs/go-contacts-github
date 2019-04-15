@@ -125,3 +125,20 @@ func GetAllUsers() []*Account {
 	}
 	return accs
 }
+
+func GetUser(id uint) []*Account {
+
+	accs := []*Account{}
+	rows, err := GetDB().Raw("select * from accounts where ID=?", id).Rows()
+
+	if err != nil {
+		fmt.Printf("error: %v", err)
+	}
+	for rows.Next() {
+
+		acc := &Account{}
+		GetDB().ScanRows(rows, &acc)
+		accs = append(accs, acc)
+	}
+	return accs
+}

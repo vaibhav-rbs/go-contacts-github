@@ -39,3 +39,11 @@ var UserAllUsersData = func(w http.ResponseWriter, r *http.Request) {
 	resp["data"] = data
 	u.Respond(w, resp)
 }
+
+var UserData = func(w http.ResponseWriter, r *http.Request) {
+	user := r.Context().Value("user").(uint) //Grab the id of the user that send the request
+	data := models.GetUser(user)
+	resp := u.Message(true, "success")
+	resp["data"] = data
+	u.Respond(w, resp)
+}
