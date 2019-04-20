@@ -2,7 +2,8 @@
 
 
 
-
+Scope of the project:
+https://github.com/vaibhav-rbs/go-contacts-github/blob/master/Project%20proposal.pdf
 
 Setup POSTMAN client with correct token
 
